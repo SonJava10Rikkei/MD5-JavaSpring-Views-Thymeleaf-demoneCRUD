@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Form Create</h1>
+<a th:href="@{/}">Back</a>
+
+<!-- Cach 1: su dung @RequestParam-->
+<!--<form th:action="@{/student/create}" method="post" >-->
+<!--    <lable>Name</lable>-->
+<!--    <br>-->
+<!--    <input type="text" name="name"> <br>-->
+<!--    <lable>Address</lable>-->
+<!--    <br>-->
+<!--    <input type="text" name="address"> <br>-->
+<!--    <lable>Age</lable>-->
+<!--    <br>-->
+<!--    <input type="text" name="age"> <br>-->
+<!--    <br>-->
+<!--    <button type="submit">Create</button>-->
+<!--</form>-->
+
+<!--Cach 2 Dung th:object:-->
+
+<form th:action="@{/student/create}" method="post" th:object="${student}">
+    <lable>Name</lable>
+    <br>
+    <input type="text" th:field="*{name}"> <br>
+    <lable>Address</lable>
+    <br>
+    <input type="text" th:field="*{address}"> <br>
+    <lable>Age</lable>
+    <br>
+    <input type="text" th:field="*{age}"> <br>
+    <br>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
